@@ -1,0 +1,27 @@
+$kind: http-request
+name: 'Get Token'
+order: 1000
+method: POST
+url: '{{travelport_base_url}}/oauth/token'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "client_id": "{{client_id}}",
+      "client_secret": "{{client_secret}}",
+      "username": "{{username}}",
+      "password": "{{password}}",
+      "grant_type": "password"
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      var jsonData = pm.response.json();
+      if (jsonData.access_token) {
+          pm.environment.set("access_token", jsonData.access_token);
+          console.log("Access token saved to environment.");
+      }

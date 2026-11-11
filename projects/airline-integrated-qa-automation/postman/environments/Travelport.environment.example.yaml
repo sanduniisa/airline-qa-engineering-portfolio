@@ -1,0 +1,21 @@
+name: Travelport
+values:
+  - key: travelport_base_url
+    value: 'https://auth.pp.travelport.com'
+  - key: travelport_api_base_url
+    value: 'https://api.pp.travelport.net'
+  - key: client_id
+    value: ''
+    secret: true
+  - key: client_secret
+    secret: true
+  - key: username
+    value: ''
+    secret: true
+  - key: password
+    secret: true
+  - key: access_token
+    secret: true
+  - key: pcc_gds
+    value: ''
+    secret: true
