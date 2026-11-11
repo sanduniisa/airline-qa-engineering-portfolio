@@ -4,14 +4,14 @@ A public portfolio of airline-domain quality engineering practices with TypeScri
 
 ## Portfolio Contents
 
-- Architecture overview
-- Airline domain glossary
-- Demo and sandbox targets
-- Test strategy
-- Flight-search test cases
-- Passenger-journey test cases
-- DRCT API test coverage
-- Engineering decisions
+- [Architecture overview](docs/architecture/OVERVIEW.md)
+- [Airline domain glossary](docs/airline-domain/GLOSSARY.md)
+- [Demo and sandbox targets](docs/environments/targets.md)
+- [Test strategy](docs/test-strategy/STRATEGY.md)
+- [Flight-search test cases](docs/test-cases/flight-search.md)
+- [Passenger-journey test cases](docs/test-cases/passenger-journey.md)
+- [DRCT API test coverage](docs/test-cases/drct-api.md)
+- [Engineering decisions](docs/case-study/engineering-decisions.md)
 
 ## Current Implementation Scope
 
