@@ -5,16 +5,16 @@ The project uses two deliberately separate targets. Their behavior and risk are 
 ## WebMCP Airline demo
 
 - URL: https://webmcp-airline.vercel.app/
-- Purpose: browser UI practice for flight search and a simulated booking flow, plus API test wrappers for flight and booking-related behaviors.
-- Contract status: no official OpenAPI contract is checked into this portfolio. The test routes are modeled expectations; a modeled `POST /flights/search` returned HTTP 405 in a prior check. Treat route/method coverage as provisional and confirm behavior against the current demo before expanding it.
+- Purpose: browser UI practice for flight search and a simulated booking flow.
+- Contract status: no verified REST contract or active API specs; a previously modeled `POST /flights/search` returned HTTP 405.
 - Data: use synthetic traveler details only. Do not enter real payment or passenger data.
 
 ## DRCT API sandbox
 
 - Base URL: https://sandbox-api.drct.aero
 - Purpose: isolated provider sandbox checks.
-- Current coverage: ping, offer search, and invalid offer pricing.
-- Out of scope: order creation, payment, ticket issuance, and any production endpoint.
+- Current coverage: ping, offer search, invalid offer pricing, and order and ticket-reporting lists. Two order-creation examples and a search-to-ticket journey are implemented behind explicit opt-ins; the full journey has not been run end to end.
+- Safety: tests restrict the target to the official sandbox host. Order creation requires `DRCT_RUN_BOOKING_TESTS=true`; the ticketing journey additionally requires `DRCT_RUN_TICKETING_TESTS=true`. Production endpoints and real payment are out of scope.
 - Secrets: provide credentials only through local environment configuration. Never commit keys, `.env` files, request headers containing secrets, or credential-bearing logs.
 
 ## Environment handling

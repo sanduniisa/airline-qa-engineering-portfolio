@@ -12,8 +12,8 @@ This glossary establishes the terms used in the portfolio's test scenarios. Prov
 | Offer | A priced travel proposal returned by a provider API. A search result or offer is not an order or ticket. |
 | Booking | A reservation-like object in the demo's simulated flow or modeled API tests. Semantics depend on the target system. |
 | Payment processing | A modeled/demo operation. The portfolio does not process real payments. |
-| Order | A provider-side purchase record, generally created after acceptance/payment according to provider rules. No DRCT order creation is currently tested. |
-| Ticket | A travel document issued after required provider steps. Ticket issuance is outside current scope. |
+| Order | A provider-side booking record. DRCT creates a new order before ticket issuance; order-creation examples are opt-in. |
+| Ticket | A travel document issued after required provider steps. The DRCT sandbox journey implements ticket issuance but has not yet been run end to end. |
 | Sandbox | A provider-controlled non-production environment. It may have different availability, limits, and behavior from production. |
 | Contract test | A check against a known interface contract. The WebMCP route expectations here are provisional and are not backed by a published OpenAPI specification. |
 | UI smoke test | A short browser test that checks a key screen or interaction path, not exhaustive business correctness. |

@@ -18,4 +18,4 @@ All passenger values must be fabricated and non-identifying. Do not use real car
 
 ## Interpretation
 
-A successful simulated booking or modeled payment response validates only that specific demo path. It does not prove provider reservation, order acceptance, financial settlement, ticket issuance, or airline operational readiness. DRCT sandbox coverage is separate and currently stops at ping, offer search, and invalid offer pricing.
+A successful simulated booking or modeled payment response validates only that specific demo path. It does not prove provider reservation, order acceptance, financial settlement, ticket issuance, or airline operational readiness. The separate [DRCT sandbox journey](drct-api.md) is implemented but has not yet been run end to end.

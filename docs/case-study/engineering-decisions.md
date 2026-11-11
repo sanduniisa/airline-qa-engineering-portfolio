@@ -6,7 +6,7 @@ The implementation belongs in a separate private repository. Publishing architec
 
 ## Separate the demo from the provider sandbox
 
-The WebMCP Airline demo is used for browser practice and modeled booking/API behavior. DRCT is a separate API sandbox with a narrower current scope. Separate configuration prevents assumptions, credentials, and failure modes from bleeding across targets.
+The WebMCP Airline demo is used for browser practice and a simulated booking flow. DRCT is a separate API sandbox. Separate configuration prevents assumptions, credentials, and failure modes from bleeding across targets.
 
 ## Be precise about API confidence
 
@@ -18,7 +18,7 @@ Test code should decide pass/fail using explicit assertions. AI may help summari
 
 ## Avoid overstating lifecycle coverage
 
-A search result, priced offer, simulated booking, provider order, payment settlement, and ticket issuance are distinct states. DRCT coverage currently stops at ping, offer search, and invalid offer pricing. It does not create orders or issue tickets. This limitation is documented rather than bridged with an unverified claim.
+A search result, priced offer, simulated booking, provider order, payment settlement, and ticket issuance are distinct states. An opt-in DRCT sandbox journey implements search, price, order, issue, and ticket reporting, but has not yet been run end to end. Independent listing tests can pass with empty results and do not establish that a ticket was issued.
 
 ## Prefer incremental risk-based coverage
 

@@ -21,11 +21,11 @@ AeroTest AI is an airline-domain quality engineering portfolio demonstrating tes
 ## Current Demonstration Scope
 
 - UI: WebMCP Airline demo at https://webmcp-airline.vercel.app/ for basic flight search and a simulated booking journey.
-- WebMCP API: local test expectations exist for flight, booking, and payment routes, but there is no checked-in official OpenAPI contract; a modeled flight-search POST previously returned HTTP 405.
-- DRCT: a separate sandbox suite covers ping, offer search, and invalid offer pricing. It does not create orders or issue tickets.
+- WebMCP API: there is no verified REST contract and no active API adapter or API specs; a previously modeled flight-search POST returned HTTP 405.
+- DRCT: separate sandbox checks cover ping, search, invalid pricing, and order and ticket listing. An opt-in journey implements search through ticket reporting but has not been run end to end. A mocked request-context test checks client request wiring offline.
 
 These are practice/demo targets, not production airline integrations. Current UI/API coverage does not demonstrate a complete real reservation, payment settlement, ticket issuance, or check-in lifecycle.
 
 ## Future Architecture
 
-As the project grows, add target-specific adapters only after confirming the target documentation, access rules, supported operations, and data-reset behavior. Introduce schema validation, network mocking, BDD, or AI components only in the release where they are implemented and tested; do not describe planned capabilities as current features.
+As the project grows, add target-specific adapters only after confirming the target documentation, access rules, supported operations, and data-reset behavior. Broader network mocking, schema validation, BDD, and AI components remain future work; do not describe planned capabilities as current features.

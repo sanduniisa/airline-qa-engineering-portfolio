@@ -7,10 +7,10 @@ Provide maintainable, risk-focused checks for the current airline demo and a sep
 ## Scope
 
 - UI: basic flight search interaction and the demo's simulated booking path.
-- Modeled WebMCP API behaviors: flight search/filtering and booking-related operations such as cancellation/payment, with contract limitations called out in `../environments/targets.md`.
-- DRCT sandbox: connectivity/ping, offer search, and invalid offer pricing only.
+- WebMCP has no verified REST contract or active API tests.
+- DRCT sandbox: ping, offer search, invalid offer pricing, and order and ticket-reporting lists; an opt-in booking-to-ticket journey is implemented but not yet run end to end.
 
-Not currently covered: real reservation fulfillment, provider order creation, live payment, ticket issuance, production integrations, exhaustive accessibility, load/performance qualification, or a published WebMCP contract.
+Not currently demonstrated: real reservation fulfillment, live payment, real ticket issuance, production integrations, exhaustive accessibility, load/performance qualification, or a published WebMCP contract.
 
 ## Test design
 
@@ -27,8 +27,9 @@ Not currently covered: real reservation fulfillment, provider order creation, li
 | Level | Purpose | Current examples |
 | --- | --- | --- |
 | UI smoke | Verify primary browser interactions | Flight search and simulated booking flow |
-| API behavior | Exercise modeled demo endpoints | Search/filter and booking/payment behaviors |
-| Sandbox integration | Verify limited non-production provider behavior | Ping, offer search, invalid offer pricing |
+| Offline client check | Verify request wiring without a provider call | DRCT paths, headers, and selected payloads |
+| Sandbox integration | Verify non-production provider behavior | Ping, offer search, invalid offer pricing, order/ticket lists |
+| Sandbox journey | Connect lifecycle operations | Opt-in search through ticket reporting; not yet run end to end |
 
 ## Reliability and reporting
 
@@ -36,8 +37,8 @@ Use explicit waits for user-visible state, avoid fixed sleeps, and keep retries 
 
 ## Contract and AI boundaries
 
-The WebMCP API cases are expectations rather than verified contract tests until an authoritative schema or stable provider documentation is available. If AI analysis is introduced, it may summarize patterns or suggest investigation steps, but deterministic assertions remain the pass/fail authority. Do not let an AI agent execute purchases, modify source, or suppress failures automatically.
+WebMCP API cases are not active until an authoritative contract is available. The DRCT offline client test checks request wiring, not live provider response schemas. If AI analysis is introduced, it may summarize patterns or suggest investigation steps, but deterministic assertions remain the pass/fail authority. Do not let an AI agent execute purchases, modify source, or suppress failures automatically.
 
 ## Future work
 
-Prioritize a verified contract, schema-based response validation, broader accessibility checks, CI execution with protected secrets, and carefully scoped sandbox lifecycle tests only after permissions and cleanup behavior are established.
+Prioritize a verified WebMCP contract, schema-based response validation, broader accessibility checks, CI execution with protected secrets, and validated sandbox lifecycle execution with appropriate permissions and cleanup policies.

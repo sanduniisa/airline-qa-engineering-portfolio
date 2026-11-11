@@ -10,15 +10,16 @@ A public portfolio of airline-domain quality engineering practices with TypeScri
 - [Test strategy](docs/test-strategy/STRATEGY.md)
 - [Flight-search test cases](docs/test-cases/flight-search.md)
 - [Passenger-journey test cases](docs/test-cases/passenger-journey.md)
+- [DRCT API test coverage](docs/test-cases/drct-api.md)
 - [Engineering decisions](docs/case-study/engineering-decisions.md)
 
 ## Current Implementation Scope
 
 - WebMCP Airline demo: browser-based flight-search checks.
-- DRCT sandbox: API checks for ping, offer search, and invalid offer pricing.
+- DRCT sandbox: separate offer, order and ticket-reporting checks, offline client checks, and an opt-in booking-to-ticket scenario.
 - Reservations and ticketing is the current capability; DCS is planned for later.
 
-The WebMCP demo has no verified REST contract for the modeled routes. Its API wrappers remain provisional and have no active API specs. DRCT coverage stops before order creation, ticket issuance, and payment processing. The latest local validation recorded 12 tests passing, 0 failing, with TypeScript type-check passing.
+The WebMCP demo has no verified REST contract for the modeled routes and has no active API specs. The DRCT ticketing journey is implemented but has not yet been run end to end. Recent DRCT validation passed five live read-only sandbox checks and one offline client check; three booking/ticketing tests were skipped. TypeScript type-check passed.
 
 This is a practice and portfolio project, not a production airline system or verified provider integration. Planned capabilities are labeled as future work.
 
@@ -31,7 +32,7 @@ This is a practice and portfolio project, not a production airline system or ver
 
 ## Technology Direction
 
-Current implementation uses TypeScript, Playwright Test, and Playwright APIRequestContext. Zod schema validation, BDD, network mocking, and AI-assisted analysis are planned unless a document explicitly identifies a completed implementation.
+Current implementation uses TypeScript, Playwright Test, and Playwright APIRequestContext. One offline client test uses a mock request context; comprehensive network mocking, Zod schema validation, BDD, and AI-assisted analysis are future work.
 
 ## Documentation Layout
 
