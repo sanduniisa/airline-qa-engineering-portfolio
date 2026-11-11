@@ -36,6 +36,14 @@ Current implementation uses TypeScript, Playwright Test, and Playwright APIReque
 
 ## Documentation Layout
 
-See the `docs/` directory for architecture, airline-domain, environment, test-strategy, test-case, and case-study materials.
+```text
+docs/
+  architecture/
+  airline-domain/
+  environments/
+  test-strategy/
+  test-cases/
+  case-study/
+```
 
 See the private implementation repository's README for setup and run commands.
